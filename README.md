@@ -2,15 +2,19 @@
 
 This repository contains a 2-tier Students Management System built on .NET Framework 4.8 using ASP.NET MVC 5 and Entity Framework 6.
 
-Features included in this commit:
-- Project skeleton for an ASP.NET MVC web app (presentation layer)
-- EF6 Code-First models and DbContext
-- A simple greedy timetable generator service (TimetableGeneratorService)
-- Minimal Home UI to run the scheduler and view basic results
-- README with setup and run instructions
+This commit updates the project to use PostgreSQL via Npgsql (EF6 provider) and adds a docker-compose development setup.
 
-Next steps you can ask me to do:
-- Add authentication and role management
-- Implement full CRUD controllers and views for Students/Teachers/Classes/Subjects
-- Integrate OR-Tools solver for advanced scheduling
-- Add unit tests and CI workflow
+Features included in this commit:
+- Switched EF provider to Npgsql for PostgreSQL
+- Updated Web.config with PostgreSQL connection string and provider registrations
+- Updated packages.config to include Npgsql and Npgsql.EntityFramework packages
+- Added docker-compose.yml for local PostgreSQL development
+- Updated README with PostgreSQL setup and migration instructions
+
+How to run (quick):
+1. Start a local PostgreSQL instance (recommended: docker-compose up -d)
+2. Update Web.config connection string credentials if needed
+3. Restore NuGet packages in Visual Studio
+4. Run the site (F5) — EF will create the database schema automatically (CreateDatabaseIfNotExists initializer)
+
+If you want, I can also add EF Migrations folder and seed data automatically — say "Add seeder and migrations" and I'll push that next.
