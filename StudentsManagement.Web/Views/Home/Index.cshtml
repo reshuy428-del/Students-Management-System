@@ -1,0 +1,21 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Students Management System</title>
+</head>
+<body>
+    <h1>Students Management System</h1>
+    <form action="/Home/Generate" method="post">
+        <button type="submit">Generate Timetable (Greedy)</button>
+    </form>
+    <div>
+        @if (ViewBag.ResultMessage != null) {
+            <p>@ViewBag.ResultMessage</p>
+        }
+    </div>
+</body>
+</html>
